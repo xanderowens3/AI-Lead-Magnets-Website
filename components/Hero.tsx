@@ -19,16 +19,16 @@ const Hero: React.FC<HeroProps> = ({ onSignUp }) => {
           <span className="gradient-text block pb-2 sm:pb-4">Turn Skeptical Prospects</span>
           <span className="gradient-text">Into </span>
           <span className="text-orange-500 italic font-semibold drop-shadow-[0_0_15px_rgba(249,115,22,0.4)]" style={{ WebkitTextFillColor: '#f97316' }}>
-            Warm Leads
+            Sexy Leads
           </span>
         </h1>
-        
+
         <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
           Midas AI generates custom reports, guides, and templates tailored to each of your prospect's exact situation while incorporating your agency's expertise—in seconds, not weeks.
         </p>
 
         <div className="flex flex-col md:flex-row items-center justify-center gap-8">
-          <button 
+          <button
             onClick={onSignUp}
             className="w-full md:w-auto bg-orange-500 text-black font-bold py-5 px-12 rounded-2xl text-xl hover:scale-105 transition-transform cta-glow"
           >
