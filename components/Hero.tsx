@@ -19,7 +19,7 @@ const Hero: React.FC<HeroProps> = ({ onSignUp }) => {
           <span className="gradient-text block pb-2 sm:pb-4">Turn Skeptical Prospects</span>
           <span className="gradient-text">Into </span>
           <span className="text-orange-500 italic font-semibold drop-shadow-[0_0_15px_rgba(249,115,22,0.4)]" style={{ WebkitTextFillColor: '#f97316' }}>
-            Sexy Leads
+            Warm Leads
           </span>
         </h1>
 
