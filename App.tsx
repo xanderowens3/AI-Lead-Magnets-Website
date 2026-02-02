@@ -1,6 +1,7 @@
 
 import { GoogleGenAI } from "@google/genai";
 import React, { useEffect, useState, useMemo, useRef, useCallback } from 'react';
+import { Analytics } from "@vercel/analytics/react";
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Comparison from './components/Comparison';
@@ -241,6 +242,7 @@ const App: React.FC = () => {
       )}
 
       <FooterMemo onHome={handleHome} />
+      <Analytics />
     </div>
   );
 };
