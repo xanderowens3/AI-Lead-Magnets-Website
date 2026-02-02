@@ -48,8 +48,8 @@ const ProgressBar = React.memo(({ isVisible }: { isVisible: boolean }) => {
   if (!isVisible) return null;
 
   return (
-    <div 
-      className="fixed top-0 left-0 h-1 bg-orange-500 z-[100] shadow-[0_0_20px_rgba(249,115,22,1)] pointer-events-none"
+    <div
+      className="fixed top-0 left-0 h-1 bg-emerald-600 z-[100] shadow-[0_0_20px_rgba(16,185,129,1)] pointer-events-none"
       style={{ width: `${progress}%`, transform: 'translateZ(0)' }}
     />
   );
@@ -57,7 +57,7 @@ const ProgressBar = React.memo(({ isVisible }: { isVisible: boolean }) => {
 
 /**
  * Architectural SolarBackground: 
- * Features a scroll-responsive solar system and a cursor-tracking orange glow.
+ * Features a scroll-responsive solar system and a cursor-tracking emerald glow.
  */
 const SolarBackground = React.memo(() => {
   const [scrollPct, setScrollPct] = useState(0);
@@ -101,12 +101,7 @@ const SolarBackground = React.memo(() => {
     };
   }, []);
 
-  const planets = useMemo(() => [
-    { size: 4, orbit: 18, duration: 25, color: '#f97316', delay: -2 },
-    { size: 6, orbit: 32, duration: 45, color: '#ffffff', delay: -10 },
-    { size: 5, orbit: 48, duration: 65, color: '#f97316', delay: -25 },
-    { size: 8, orbit: 68, duration: 90, color: '#ffffff', delay: -5 },
-  ], []);
+
 
   const focalPoint = useMemo(() => ({
     x: 90 - scrollPct * 20,
@@ -114,21 +109,21 @@ const SolarBackground = React.memo(() => {
   }), [scrollPct]);
 
   return (
-    <div 
+    <div
       ref={containerRef}
       className="fixed inset-0 z-[-1] overflow-hidden pointer-events-none select-none transition-colors duration-1000 ease-in-out"
-      style={{ 
-        backgroundColor: '#020202', 
+      style={{
+        backgroundColor: '#ffffff',
         transform: 'translateZ(0)',
         '--mouse-x': '50%',
         '--mouse-y': '50%'
       } as any}
     >
       {/* Interactive Cursor Glow */}
-      <div 
+      <div
         className="absolute w-[600px] h-[600px] rounded-full pointer-events-none transition-opacity duration-300 will-change-transform"
         style={{
-          background: 'radial-gradient(circle at center, rgba(249, 115, 22, 0.08) 0%, transparent 70%)',
+          background: 'radial-gradient(circle at center, rgba(16, 185, 129, 0.08) 0%, transparent 70%)',
           left: 0,
           top: 0,
           transform: 'translate3d(calc(var(--mouse-x) - 300px), calc(var(--mouse-y) - 300px), 0)',
@@ -137,93 +132,59 @@ const SolarBackground = React.memo(() => {
       />
 
       {/* Background Atmosphere - Global Gradient */}
-      <div 
+      <div
         className="absolute inset-0 transition-opacity duration-1000"
-        style={{ 
-          background: `radial-gradient(circle at ${focalPoint.x}% ${focalPoint.y}%, var(--glow-color, rgba(249,115,22,0.1)) 0%, transparent 80%)`,
+        style={{
+          background: `radial-gradient(circle at ${focalPoint.x}% ${focalPoint.y}%, var(--glow-color, rgba(16,185,129,0.1)) 0%, transparent 80%)`,
           opacity: 0.7
         }}
       />
 
       {/* Subtle Grid - Radial Masked */}
-      <div 
-        className="absolute inset-0 opacity-[0.05] pointer-events-none" 
-        style={{ 
+      <div
+        className="absolute inset-0 opacity-[0.8] pointer-events-none"
+        style={{
           backgroundImage: `
-            linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px)
-          `, 
+            linear-gradient(to right, rgba(17, 24, 39, 0.1) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(17, 24, 39, 0.1) 1px, transparent 1px)
+          `,
           backgroundSize: '100px 100px',
           maskImage: `radial-gradient(circle at ${focalPoint.x}% ${focalPoint.y}%, black, transparent 90%)`,
           WebkitMaskImage: `radial-gradient(circle at ${focalPoint.x}% ${focalPoint.y}%, black, transparent 90%)`
-        }} 
+        }}
       />
 
-      {/* Architectural Solar System */}
-      <div 
+      {/* Architectural Solar System - REMOVED per user request */}
+      <div
         className="absolute flex items-center justify-center transition-transform duration-700 ease-out will-change-transform"
-        style={{ 
-          left: `${focalPoint.x}vw`, 
+        style={{
+          left: `${focalPoint.x}vw`,
           top: `${focalPoint.y}vh`,
           perspective: '1500px',
           transform: `translate(-50%, -50%) rotateX(${15 + scrollPct * 30}deg) scale(${0.8 + scrollPct * 0.4})`
         }}
       >
         <div className="relative w-[100vw] h-[100vw] flex items-center justify-center transform rotateX-[70deg]">
-          
-          <div className="absolute w-2 h-2 bg-white rounded-full shadow-[0_0_30px_5px_#f97316] z-20" />
-          <div className="absolute w-[12vw] h-[12vw] bg-orange-500/10 rounded-full blur-[60px] animate-pulse-core" />
-          
-          {planets.map((planet, i) => (
-            <React.Fragment key={i}>
-              <div 
-                className="absolute border border-white/[0.04] rounded-full"
-                style={{
-                  width: `${planet.orbit}vw`,
-                  height: `${planet.orbit}vw`,
-                }}
-              />
-              
-              <div 
-                className="absolute flex items-center justify-center animate-orbit"
-                style={{
-                  width: `${planet.orbit}vw`,
-                  height: `${planet.orbit}vw`,
-                  animationDuration: `${planet.duration}s`,
-                  animationDelay: `${planet.delay}s`
-                }}
-              >
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 transform rotateX-[-70deg]">
-                  <div 
-                    className="rounded-full shadow-[0_0_15px_rgba(255,255,255,0.1)]"
-                    style={{
-                      width: `${planet.size}px`,
-                      height: `${planet.size}px`,
-                      backgroundColor: planet.color,
-                      boxShadow: planet.color === '#f97316' ? `0 0 12px #f97316` : `0 0 10px rgba(255,255,255,0.6)`
-                    }}
-                  />
-                </div>
-              </div>
-            </React.Fragment>
-          ))}
+
+
+
         </div>
       </div>
 
       {/* Background Particles */}
-      <div className="absolute inset-0 opacity-20 pointer-events-none">
+      <div className="absolute inset-0 opacity-40 pointer-events-none">
         {[...Array(30)].map((_, i) => (
-          <div key={i} className="absolute w-px h-px bg-white rounded-full animate-twinkle" 
-               style={{ top: `${(i * 13.7) % 100}%`, left: `${(i * 21.3) % 100}%`, opacity: Math.random(), animationDelay: `${Math.random() * 5}s` }} />
+          <div key={i} className="absolute w-px h-px bg-gray-600 rounded-full animate-twinkle"
+            style={{ top: `${(i * 13.7) % 100}%`, left: `${(i * 21.3) % 100}%`, opacity: Math.random(), animationDelay: `${Math.random() * 5}s` }} />
         ))}
       </div>
 
-      <div className="absolute inset-0 noise opacity-[0.1] mix-blend-overlay pointer-events-none" />
+      <div className="absolute inset-0 noise opacity-[0.05] mix-blend-multiply pointer-events-none" />
 
       <style>{`
         :root {
           --scroll-pct: 0;
-          --glow-color: rgba(249, 115, 22, 0.1);
+          --glow-color: rgba(16, 185, 129, 0.1);
         }
 
         @keyframes orbit {
@@ -260,7 +221,7 @@ const App: React.FC = () => {
   const handleHome = useCallback(() => handleNavigate('home'), [handleNavigate]);
 
   return (
-    <div className="relative min-h-screen text-gray-100 selection:bg-orange-500 selection:text-white overflow-x-hidden">
+    <div className="relative min-h-screen text-gray-900 selection:bg-emerald-500 selection:text-white overflow-x-hidden">
       <SolarBackground />
       <ProgressBar isVisible={view === 'home'} />
       <NavbarMemo onSignUp={handleSignUp} onHome={handleHome} currentView={view} />
@@ -278,7 +239,7 @@ const App: React.FC = () => {
       ) : (
         <SignUpPage onNavigate={handleNavigate} />
       )}
-      
+
       <FooterMemo onHome={handleHome} />
     </div>
   );

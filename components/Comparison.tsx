@@ -1,10 +1,10 @@
 
 import React from 'react';
-import { 
-  FileCheckIcon, 
-  TimerIcon, 
-  ShieldIcon, 
-  GroupIcon, 
+import {
+  FileCheckIcon,
+  TimerIcon,
+  ShieldIcon,
+  GroupIcon,
   CurrencyIcon,
   FileXIcon,
   HourglassIcon,
@@ -16,57 +16,57 @@ import {
 const Comparison: React.FC = () => {
   const oldPainPoints = [
     {
-      title: "Generic Lead Magnets That Get Ignored",
-      Icon: FileXIcon,
-      sub: "Your 'Ultimate Guide' sits in downloads folders alongside 47 others, doing nothing."
-    },
-    {
-      title: "Weeks to Create, Minutes to Dismiss",
+      title: "Missed Leads After Hours",
       Icon: HourglassIcon,
-      sub: "By the time you've custom-created a resource, they've already chosen a competitor."
+      sub: "Patients research treatments at 8 PM. If you don't answer, they move to the next clinic."
     },
     {
-      title: "Trust Takes Forever to Build",
-      Icon: BrokenShieldIcon,
-      sub: "You're asking for discovery calls before proving your expertise, creating friction."
+      title: "Generic Chatbots Fail",
+      Icon: FileXIcon,
+      sub: "Basic widgets can't answer complex questions about implants or Invisalign prices."
     },
     {
-      title: "One-Size-Fits-All Content Doesn't Convert",
+      title: "Wasted Reception Time",
       Icon: DuplicateIcon,
-      sub: "Prospects with different goals all get the same cookie-cutter magnet that barely resonates."
+      sub: "Your team spends hours answering the same FAQs or chasing leads who never pick up."
     },
     {
-      title: "High Value = High Cost",
+      title: "Price Shoppers & Tire Kickers",
       Icon: DollarIcon,
-      sub: "Creating custom resources isn't scalable. You either spend thousands or settle for generic."
+      sub: "Filling your diary with low-value checkups while high-ticket cases slip away."
+    },
+    {
+      title: "No Finance Qualification",
+      Icon: BrokenShieldIcon,
+      sub: "Booking consults for patients who can't afford £3k+ treatments."
     }
   ];
 
   const newSolutions = [
     {
-      title: "Hyper-Personalized Lead Magnets",
-      Icon: FileCheckIcon,
-      sub: "Every prospect receives a custom report tailored specifically to their industry and challenges."
-    },
-    {
-      title: "From Stranger to Advocate in 60 Seconds",
+      title: "24/7 Digital Coordinator",
       Icon: TimerIcon,
-      sub: "Generate personalized, high-value resources instantly while the prospect is still on your site."
+      sub: "Instant, clinical-grade responses day or night. Never miss an emergency or enquiry."
     },
     {
-      title: "Build Trust Before the First Call",
-      Icon: ShieldIcon,
-      sub: "Deliver genuine value before asking for anything. Prospects arrive already convinced."
+      title: "Custom Patient Reports",
+      Icon: FileCheckIcon,
+      sub: "Deliver personalized treatment guides that educate and build trust instantly."
     },
     {
-      title: "1:1 Personalization at Scale",
+      title: "Automated Admin Killer",
       Icon: GroupIcon,
-      sub: "Each visitor gets a unique lead magnet based on industry data and pain points."
+      sub: "Iris AI handles the intake, triage, and booking so your team can focus on care."
     },
     {
-      title: "Premium Value, Zero Marginal Cost",
+      title: "High-Value Prioritization",
+      Icon: ShieldIcon,
+      sub: "Automatically flags and fast-tracks patients interested in Implants & Ortho."
+    },
+    {
+      title: "Financial Screening",
       Icon: CurrencyIcon,
-      sub: "Create unlimited custom lead magnets without design fees or production time."
+      sub: "Politely qualifies budget and finance eligibility before they book a slot."
     }
   ];
 
@@ -74,31 +74,31 @@ const Comparison: React.FC = () => {
     <section id="comparison" className="py-24 px-6 relative overflow-hidden">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-20">
-          <h2 className="serif text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-medium mb-4 gradient-text tracking-tighter whitespace-nowrap px-4 pb-4">
-            The Old Way vs. <span className="italic">The Midas Way</span>
+          <h2 className="serif text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-medium mb-4 gradient-text tracking-tighter whitespace-nowrap px-4 pb-4 text-gray-900">
+            The Old Way vs. <span className="italic">The Iris Way</span>
           </h2>
-          <div className="h-1.5 w-32 bg-orange-500 mx-auto rounded-full shadow-[0_0_20px_rgba(249,115,22,0.6)]"></div>
+          <div className="h-1.5 w-32 bg-emerald-500 mx-auto rounded-full shadow-[0_0_20px_rgba(16,185,129,0.6)]"></div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-stretch">
-          
+
           {/* Old Way Block */}
-          <div className="p-8 rounded-3xl bg-zinc-900/30 border border-white/5 relative group flex flex-col h-full">
+          <div className="p-8 rounded-3xl bg-gray-50 border border-gray-200 relative group flex flex-col h-full shadow-sm">
             <div className="mb-6 lg:min-h-[130px]">
-              <span className="text-zinc-400 font-mono text-xs mb-2 block tracking-widest uppercase italic opacity-80">The Old Approach</span>
-              <h2 className="serif text-4xl font-medium mb-2 text-zinc-200">The Broken Playbook</h2>
-              <p className="text-zinc-400 text-sm">Most agencies are still using the same tired tactics—and wondering why prospects ghost them.</p>
+              <span className="text-gray-500 font-mono text-xs mb-2 block tracking-widest uppercase italic opacity-80">The Old Approach</span>
+              <h2 className="serif text-4xl font-medium mb-2 text-gray-800">The Broken Playbook</h2>
+              <p className="text-gray-500 text-sm">Most practices are still using the same tired tactics—and wondering why chairs are empty.</p>
             </div>
-            
+
             <ul className="space-y-2 flex-grow">
               {oldPainPoints.map((point, i) => (
                 <li key={i} className="flex gap-4 opacity-70 group-hover:opacity-100 transition-all duration-500 group/item hover:translate-x-1 lg:min-h-[75px]">
-                  <div className="flex-shrink-0 w-10 h-10 bg-zinc-800/50 rounded-xl flex items-center justify-center mt-0.5 text-zinc-400 group-hover/item:text-zinc-200 group-hover/item:bg-zinc-800 transition-all">
+                  <div className="flex-shrink-0 w-10 h-10 bg-gray-200 rounded-xl flex items-center justify-center mt-0.5 text-gray-500 group-hover/item:text-gray-700 group-hover/item:bg-gray-300 transition-all">
                     <point.Icon className="w-5 h-5" />
                   </div>
                   <div>
-                    <h4 className="text-zinc-100 font-semibold text-base mb-0.5 group-hover/item:text-white transition-colors">{point.title}</h4>
-                    <p className="text-zinc-400 text-sm leading-tight opacity-90">{point.sub}</p>
+                    <h4 className="text-gray-900 font-semibold text-base mb-0.5 transition-colors">{point.title}</h4>
+                    <p className="text-gray-500 text-sm leading-tight opacity-90">{point.sub}</p>
                   </div>
                 </li>
               ))}
@@ -106,27 +106,27 @@ const Comparison: React.FC = () => {
           </div>
 
           {/* New Way Block */}
-          <div className="p-1 px-1 rounded-3xl bg-gradient-to-br from-orange-500/20 to-transparent flex flex-col h-full">
-            <div className="h-full p-8 rounded-[22px] bg-[#050505] border border-orange-500/20 relative overflow-hidden group flex flex-col">
+          <div className="p-1 px-1 rounded-3xl bg-gradient-to-br from-emerald-500/20 to-transparent flex flex-col h-full">
+            <div className="h-full p-8 rounded-[22px] bg-white border border-emerald-500/20 relative overflow-hidden group flex flex-col shadow-xl shadow-emerald-500/5">
               <div className="absolute top-0 right-0 p-8 pointer-events-none">
-                <div className="w-24 h-24 bg-orange-500/10 rounded-full blur-3xl group-hover:bg-orange-500/20 transition-all"></div>
+                <div className="w-24 h-24 bg-emerald-500/10 rounded-full blur-3xl group-hover:bg-emerald-500/20 transition-all"></div>
               </div>
-              
+
               <div className="mb-6 lg:min-h-[130px]">
-                <span className="text-orange-500 font-mono text-xs mb-2 block tracking-widest uppercase font-bold">The Midas AI Approach</span>
-                <h2 className="serif text-4xl font-medium mb-2 text-white">The Midas AI Playbook</h2>
-                <p className="text-gray-400 text-sm">Instantly deliver customized value that turns skeptical visitors into eager prospects.</p>
+                <span className="text-emerald-600 font-mono text-xs mb-2 block tracking-widest uppercase font-bold">The Iris AI Approach</span>
+                <h2 className="serif text-4xl font-medium mb-2 text-gray-900">Your Digital Coordinator</h2>
+                <p className="text-gray-600 text-sm">Instantly deliver customized value that turns skeptical visitors into booked patients.</p>
               </div>
 
               <ul className="space-y-2 flex-grow">
                 {newSolutions.map((solution, i) => (
                   <li key={i} className="flex gap-4 group/item transition-all duration-300 hover:translate-x-2 lg:min-h-[75px]">
-                    <div className="flex-shrink-0 w-10 h-10 bg-orange-500/10 rounded-xl flex items-center justify-center mt-0.5 group-hover/item:scale-110 group-hover/item:bg-orange-500 transition-all text-orange-500 group-hover/item:text-black shadow-inner">
+                    <div className="flex-shrink-0 w-10 h-10 bg-emerald-500/10 rounded-xl flex items-center justify-center mt-0.5 group-hover/item:scale-110 group-hover/item:bg-emerald-600 transition-all text-emerald-600 group-hover/item:text-white shadow-inner">
                       <solution.Icon className="w-5 h-5" />
                     </div>
                     <div>
-                      <h4 className="text-white font-bold text-base mb-0.5 group-hover/item:text-orange-400 transition-colors">{solution.title}</h4>
-                      <p className="text-gray-400 group-hover/item:text-gray-300 text-sm leading-tight transition-colors">{solution.sub}</p>
+                      <h4 className="text-gray-900 font-bold text-base mb-0.5 group-hover/item:text-emerald-600 transition-colors">{solution.title}</h4>
+                      <p className="text-gray-600 group-hover/item:text-gray-500 text-sm leading-tight transition-colors">{solution.sub}</p>
                     </div>
                   </li>
                 ))}

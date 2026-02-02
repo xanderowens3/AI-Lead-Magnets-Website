@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { HammerIcon } from './Icons';
+import { ToothIcon } from './Icons';
 
 interface NavbarProps {
   onSignUp: () => void;
@@ -38,52 +38,52 @@ const Navbar: React.FC<NavbarProps> = ({ onSignUp, onHome, currentView }) => {
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center p-6 transition-all duration-300">
-      <div className="w-full max-w-5xl backdrop-blur-md bg-white/5 border border-white/10 rounded-full px-6 py-3 flex items-center justify-between">
-        <a 
-          href="#home" 
+      <div className="w-full max-w-5xl backdrop-blur-md bg-white/70 border border-gray-200/50 rounded-full px-6 py-3 flex items-center justify-between shadow-sm">
+        <a
+          href="#home"
           onClick={(e) => handleScroll(e, 'home')}
           className="flex items-center gap-2 group cursor-pointer"
         >
-          <div className="w-8 h-8 bg-orange-500 rounded-lg flex items-center justify-center text-black group-hover:scale-110 transition-transform">
-            <HammerIcon className="w-5 h-5" />
+          <div className="w-8 h-8 bg-emerald-600 rounded-lg flex items-center justify-center text-white group-hover:scale-110 transition-transform shadow-md shadow-emerald-600/20">
+            <ToothIcon className="w-5 h-5" />
           </div>
-          <span className="font-bold tracking-tight text-xl group-hover:text-orange-500 transition-colors">MIDAS AI</span>
+          <span className="font-bold tracking-tight text-xl text-gray-900 group-hover:text-emerald-600 transition-colors">IRIS AI</span>
         </a>
-        
-        <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-400">
-          <a 
-            href="#home" 
+
+        <div className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-500">
+          <a
+            href="#home"
             onClick={(e) => handleScroll(e, 'home')}
-            className="hover:text-white transition-colors"
+            className="hover:text-emerald-600 transition-colors"
           >
             Home
           </a>
-          <a 
-            href="#comparison" 
+          <a
+            href="#comparison"
             onClick={(e) => handleScroll(e, 'comparison')}
-            className="hover:text-white transition-colors"
+            className="hover:text-emerald-600 transition-colors"
           >
             The Difference
           </a>
-          <a 
-            href="#how-it-works" 
+          <a
+            href="#how-it-works"
             onClick={(e) => handleScroll(e, 'how-it-works')}
-            className="hover:text-white transition-colors"
+            className="hover:text-emerald-600 transition-colors"
           >
             How It Works
           </a>
-          <a 
-            href="#faq" 
+          <a
+            href="#faq"
             onClick={(e) => handleScroll(e, 'faq')}
-            className="hover:text-white transition-colors"
+            className="hover:text-emerald-600 transition-colors"
           >
             FAQ
           </a>
         </div>
 
-        <button 
+        <button
           onClick={onSignUp}
-          className="bg-white text-black px-5 py-2 rounded-full text-sm font-semibold hover:bg-orange-500 hover:text-white transition-all cta-glow"
+          className="bg-gray-900 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-emerald-600 hover:text-white transition-all cta-glow shadow-md"
         >
           Sign Up
         </button>
