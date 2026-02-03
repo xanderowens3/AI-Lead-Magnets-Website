@@ -1,7 +1,7 @@
 
 import { GoogleGenAI } from "@google/genai";
 import React, { useEffect, useState, useMemo, useRef, useCallback } from 'react';
-import { Analytics } from "@vercel/analytics/react";
+import { Analytics } from "@vercel/analytics/react"; // Vercel Analytics
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Comparison from './components/Comparison';
